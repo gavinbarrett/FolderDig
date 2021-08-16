@@ -14,7 +14,7 @@ def verify(target_path, proof):
 		else:
 			print(f'{RED}Filesystem integrity compromised.{END}')
 	except ValueError as error:
-		print(f'{error}')
+		print(f'{RED}{error}{END}')
 
 def verify_proof(target_path, proof):
 	# grab the current node hash from the proof

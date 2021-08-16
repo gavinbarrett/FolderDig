@@ -2,11 +2,14 @@ from hashlib import sha256
 from os import path, listdir
 from binascii import unhexlify
 
+RED = '\u001b[31m'
+END = '\033[0m'
+
 def compute_proof(target_path, tag):
 	if path.exists(target_path):
 		return prove(target_path, tag)
 	else:
-		raise Exception(f"Path `{target_path}` doesn't exist.")
+		raise Exception(f"{RED}Path `{target_path}` doesn't exist.{END}")
 
 def prove(target_path, tag):
 	if path.isfile(target_path):
